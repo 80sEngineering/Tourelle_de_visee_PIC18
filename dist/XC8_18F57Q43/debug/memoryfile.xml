@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/XC8_18F57Q43/debug/tourelle_de_viseev1.X.debug.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>131072</length>
+      <used>596</used>
+      <free>130476</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>8192</length>
+      <used>65</used>
+      <free>8127</free>
+    </memory>
+  </executable>
+</project>
