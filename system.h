@@ -11,6 +11,7 @@
 #include "clock.h"
 #include "pins.h"
 #include "uart1.h"
+#include "PWM.h"
 
 void SYSTEM_Initialize(void);
 

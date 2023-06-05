@@ -2,6 +2,15 @@
 
 void PIN_MANAGER_Initialize(void)
 {
+    TRISFbits.TRISF4 = 0;
+    TRISFbits.TRISF5 = 0;
+    TRISFbits.TRISF6 = 0;
+    TRISFbits.TRISF7 = 0;
+    PORTFbits.RF4 = 0;
+    PORTFbits.RF5 = 0;
+    PORTFbits.RF6 = 0;
+    PORTFbits.RF7 = 0;
+    
     TRISCbits.TRISC7 = 1; //Input
     TRISFbits.TRISF7 = 0; //Output
     ANSELCbits.ANSELC7 = 0;

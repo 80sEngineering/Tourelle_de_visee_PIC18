@@ -14,16 +14,18 @@
 #endif
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
-#include "user.h"          /* User funct/params, such as InitApp */
+#include "motor.h"  
 
 void main(void)
 {
     uint8_t data;
     SYSTEM_Initialize();
+    
     while(1)
     {
         data = UART1_Read();
         UART1_Write(data);
+        PWM_value_send(10);
     }
 
 }

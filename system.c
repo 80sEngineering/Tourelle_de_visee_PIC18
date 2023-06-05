@@ -18,11 +18,10 @@
 #include "pins.h"
 #include <xc.h>
 
-
-
 void SYSTEM_Initialize(void)
 {
     CLOCK_Initialize();
     PIN_MANAGER_Initialize();
     UART1_Initialize();
+    PWM_Initialize();
 }
