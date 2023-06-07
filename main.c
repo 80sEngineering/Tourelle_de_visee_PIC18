@@ -10,23 +10,49 @@
 
 #include <stdint.h>        /* For uint8_t definition */
 #include <stdbool.h>       /* For true/false definition */
+#include <string.h>
 
 #endif
 
 #include "system.h"        /* System funct/params, like osc/peripheral config */
-#include "motor.h"  
+#include "motor.h"
 
-void main(void)
-{
+int point(){
     uint8_t data;
-    SYSTEM_Initialize();
-    
+    char target[3];
+    int int_target = 0;
+    int index = 0;
     while(1)
     {
         data = UART1_Read();
-        UART1_Write(data);
-        PWM_value_send(10);
-    }
+        if(data == 44){ // data == ","
+            int_target = atoi(target);
+            if (int_target<=180){
+                int angle = 180 - int_target;
+                rotation_moteur_antihoraire(angle);
+                __delay_ms(8000);
+                rotation_moteur_horaire(angle);
+            }else{
+                int angle = int_target - 180;
+                rotation_moteur_horaire(angle);
+                __delay_ms(8000);
+                rotation_moteur_antihoraire(angle);
+            }
 
+
+            return 1;
+            }else{
+            target[index] = (char)data;
+            index += 1;
+        }
+
+    }
 }
 
+void main(void)
+{
+    SYSTEM_Initialize();
+    while(1){
+        point();
+    }
+}

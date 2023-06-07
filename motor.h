@@ -7,4 +7,5 @@
 
 #include "pins.h"
 
-void rotation();
+void rotation_moteur_horaire(int degres);
+void rotation_moteur_antihoraire(int degres);
